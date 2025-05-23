@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Support Matrix Portal</title>
+  <title>Compatibility Matrix Portal</title>
   <link rel="stylesheet" href="style.css" />
   
   <!-- Choices.js CSS -->
@@ -31,10 +31,10 @@
 
   <!-- Tabs Container -->
   <div class="tabs-container">
-    <div class="tab" id="tab-interoperability" onclick="showPage('interoperability')">Delphix Products</div>
-    <div class="tab" id="tab-thirdPartySolutions" onclick="showPage('thirdPartySolutions')">Third Party Solutions</div>
-    <div class="tab" id="tab-hardware" onclick="showPage('hardware')">Hardware</div>
-    <div class="tab" id="tab-upgrade" onclick="showPage('upgrade')">Upgrade Path</div>
+    <div class="tab" id="tab-interoperability" onclick="showPage('interoperability')">Delphix</div>
+    <div class="tab" id="tab-thirdPartySolutions" onclick="showPage('thirdPartySolutions')">Third Party</div>
+    <div class="tab" id="tab-hardware" onclick="showPage('hardware')">Hosting</div>
+    <div class="tab" id="tab-upgrade" onclick="showPage('upgrade')">Upgrades</div>
   </div>
 
   <!-- Horizontal separator before tabs -->
@@ -47,16 +47,17 @@
       
       <!-- Side Navigation for Interoperability -->
       <div id="sidenav">
+           <h3>Compare</h3>
         <div class="product-container">
-          <label for="product1-category">Select a product:</label>
+          <label for="product1-category">Product:</label>
           <select id="product1-category">
-            <option value="">--Select--</option>
+            <option value="">Choose a product</option>
             <!-- Options dynamically filled -->
           </select>
 
-          <label for="product1-version">Select a version:</label>
+          <label for="product1-version">Version:</label>
           <select id="product1-version">
-            <option value="" disabled selected>--Select--</option>
+            <option value="" disabled selected>Choose a version</option>
             <!-- Options dynamically filled -->
           </select>
         </div>
@@ -64,40 +65,39 @@
         <h3>and</h3>
 
         <div class="product-container">
-          <label for="product2-category">Select a product:</label>
+          <label for="product2-category">Product:</label>
           <select id="product2-category">
-            <option value="">--Select--</option>
+            <option value="">Choose a product</option>
             <!-- Options dynamically filled -->
           </select>
 
-          <label for="product2-version">Select a version:</label>
+          <label for="product2-version">Version:</label>
           <select id="product2-version">
-            <option value="">--Select--</option>
+            <option value="">Choose a version</option>
             <!-- Options dynamically filled -->
           </select>
         </div>
 
         <!-- Action buttons -->
         <div class="button-container">
-          <button class="primary-button" onclick="checkCompatibilityTab1()">Check Compatibility</button>
+          <button class="primary-button" onclick="checkCompatibilityTab1()">Check compatibility</button>
           <button class="secondary-button" onclick="resetFieldsTab1()">Reset</button>
         </div>
       </div>
 
       <!-- Intro text shown before results -->
       <div id="tab1-intro" class="tab-intro">
-        <p>This tab lets you check interoperability between Delphix products by selecting products and versions to see which combinations are compatible.</p>
+        <p>Your Delphix product and version compatibility results appear here.</p>
       </div>
 
       <!-- Main Results Content (initially hidden) -->
       <div id="main-content" style="display: none;">
-        <h1>Compatibility Results</h1>
+        <h1>Results</h1>
 
         <!-- Additional action buttons -->
         <div class="additional-actions">
-          <button id="addToFav" class="action-button"><i class="fas fa-star"></i> Save to Favorites</button>
-          <button id="export-csv-tab1" class="action-button" title="Export to CSV"><i class="fa-solid fa-file-arrow-down"></i> Export Results</button>
           <button id="collapseExpandAll-tab1" class="action-button"><i class="fa-solid fa-down-left-and-up-right-to-center"></i> Collapse All</button>
+          <button id="export-csv-tab1" class="action-button" title="Export to CSV"><i class="fa-solid fa-file-arrow-down"></i> Export Results</button>
         </div>
 
         <!-- Compatibility legend -->
@@ -133,78 +133,76 @@
       <!-- Side Navigation for Third Party Solutions -->
       <div id="thirdPartySolutions-sidenav">
         <h3>Compare</h3>
-        <h4>Select Products</h4>
         <hr />
         <div class="product-container">
 
           <!-- Product 1 Category -->
-          <label for="thirdPartySolutions-product1-category">Category 1:</label>
+          <label for="thirdPartySolutions-product1-category">Category:</label>
           <select id="thirdPartySolutions-product1-category">
-            <option value="">--Select--</option>
+            <option value="">Choose a category</option>
             <!-- Dynamically filled -->
           </select>
 
           <!-- Product 1 Solution -->
-          <label for="thirdPartySolutions-product1-solution" disabled>Solution 1:</label>
+          <label for="thirdPartySolutions-product1-solution" disabled>Solution:</label>
           <select id="thirdPartySolutions-product1-solution">
-            <option value="" disabled selected>--Select--</option>
+            <option value="" disabled selected>Choose a solution</option>
             <!-- Dynamically filled -->
           </select>
 
           <!-- Product 1 Version -->
           <label for="thirdPartySolutions-product1-version" disabled>Version:</label>
           <select id="thirdPartySolutions-product1-version">
-            <option value="">--Select--</option>
+            <option value="">Choose a version</option>
             <!-- Dynamically filled -->
           </select>
         </div>
 
-        <h3>With</h3>
+        <h3>and</h3>
 
         <div class="product-container">
           <!-- Product 2 Category -->
-          <label for="thirdPartySolutions-product2-category">Category 2:</label>
+          <label for="thirdPartySolutions-product2-category">Category:</label>
           <select id="thirdPartySolutions-product2-category">
-            <option value="">--Select--</option>
+            <option value="">Chosoe a category</option>
             <!-- Dynamically filled -->
           </select>
 
           <!-- Product 2 Solution (multi-select) -->
-          <label for="thirdPartySolutions-product2-solution" title="Choose one or more solutions for Product 2">Solution 2:</label>
+          <label for="thirdPartySolutions-product2-solution" title="Choose one or more solutions for Product 2">Solution:</label>
           <select id="thirdPartySolutions-product2-solution" multiple>
-            <option value="">--Select--</option>
+            <option value="">Choose a solution</option>
             <!-- Dynamically filled -->
           </select>
 
           <!-- Product 2 Version -->
           <label for="thirdPartySolutions-product2-version">Version:</label>
           <select id="thirdPartySolutions-product2-version">
-            <option value="">--Select--</option>
+            <option value="">Choose a version</option>
             <!-- Dynamically filled -->
           </select>
         </div>
 
         <!-- Action buttons -->
         <div class="thirdPartySolutions-button-container">
-          <button class="thirdPartySolutions-primary-button" onclick="checkCompatibilityTab2()">Check Compatibility</button>
+          <button class="thirdPartySolutions-primary-button" onclick="checkCompatibilityTab2()">Check compatibility</button>
           <button class="thirdPartySolutions-secondary-button" onclick="resetFieldsTab2()">Reset</button>
         </div>
       </div>
 
       <!-- Intro text for 3rd Party tab -->
       <div id="tab2-intro" class="tab-intro">
-        <p>This tab lets you check compatibility between third-party solutions by selecting their categories, products, and versions. You can compare multiple solutions to see which combinations are supported.</p>
+        <p>Your third-party solutions compatibility results appear here.</p>
       </div>
 
       <!-- Main Results Content (initially hidden) -->
       <div id="thirdPartySolutions-main-content" style="display: none;">
-        <h1>Compatibility Results</h1>
+        <h1>Results</h1>
 
         <!-- Additional action buttons -->
         <div class="additional-actions">
-          <button id="addToFav" class="action-button"><i class="fas fa-star"></i> Save to Favorites</button>
-          <button id="export-csv-tab2" class="action-button" title="Export to CSV"><i class="fa-solid fa-file-arrow-down"></i> Export Results</button>
           <button id="collapseExpandAll-tab2" class="action-button"><i class="fa-solid fa-down-left-and-up-right-to-center"></i> Collapse All</button>
+          <button id="export-csv-tab2" class="action-button" title="Export to CSV"><i class="fa-solid fa-file-arrow-down"></i> Export Results</button>
         </div>
 
         <!-- Compatibility legend -->
@@ -240,27 +238,27 @@
 
       <!-- Sidenav -->
       <div id="sidenav">
-        <h4><b>Select a Product</b></h4>
+        <h4><b>Select a product</b></h4>
         <hr />
 
         <div class="product-container">
           <!-- Category Dropdown -->
           <label for="hardware-category">Category:</label>
           <select id="hardware-category">
-            <option value="">--Select--</option>
+            <option value="">Choose a product</option>
             <!-- Options dynamically populated (e.g., Cloud, Hypervisor) -->
           </select>
 
           <!-- Product Dropdown (multi-select) -->
           <label for="hardware-product1-category">Product:</label>
           <select id="hardware-product1-category" multiple>
-            <option value="">--Select--</option>
+            <option value="">Choose a product</option>
             <!-- Options dynamically populated based on selected category -->
           </select>
         </div>
 
         <div class="button-container-hardware">
-          <button class="hardware-page-button" onclick="checkCompatibilityTab3()">Check Compatibility</button>
+          <button class="hardware-page-button" onclick="checkCompatibilityTab3()">Check compatibility</button>
           <button class="hardware-secondary-button" onclick="resetFieldsTab3()">Reset</button>
         </div>
       </div>
@@ -268,19 +266,16 @@
       <!-- Introduction Text -->
       <div id="tab3-intro" class="tab-intro">
         <p>
-          This tab lets you check hardware compatibility by selecting hardware categories and models.
-          You can view supported configurations and versions to ensure your environment meets requirements.
+          Your hardware compatibility results appear here.
         </p>
       </div>
 
       <!-- Results Section (hidden by default) -->
       <div id="hardware-main-content" style="display: none;">
-        <h1>Compatibility Results</h1>
+        <h1>Results</h1>
         
         <div class="additional-actions">
-          <button id="addToFav" class="action-button">
-            <i class="fas fa-star"></i> Save to Favorites
-          </button>
+        
           <button id="export-csv-tab3" class="action-button" title="Export to CSV">
             <i class="fa-solid fa-file-arrow-down"></i> Export Results
           </button>
@@ -304,25 +299,25 @@
 
     <!-- Sidenav -->
     <div id="sidenav">
-      <h4><b>Select a Product</b></h4>
+      <h4>Select a product</h4>
       <hr />
 
       <div class="product-container">
         <label for="upgrade-product1-category"><b>Product:</b></label>
         <select id="upgrade-product1-category">
-          <option value="">--Select--</option>
+          <option value="">Choose a product</option>
           <!-- Options dynamically populated -->
         </select>
 
         <label for="upgrade-product1-version"><b>Version:</b></label>
         <select id="upgrade-product1-version">
-          <option value="">--Select--</option>
+          <option value="">Choose a version</option>
           <!-- Options dynamically populated -->
         </select>
       </div>
 
       <div class="button-container-upgrade">
-        <button class="upgrade-page-button" onclick="checkCompatibilityTab4()">Check Upgrade Path</button>
+        <button class="upgrade-page-button" onclick="checkCompatibilityTab4()">Check upgrade path</button>
         <button class="upgrade-secondary-button" onclick="resetFieldsTab4()">Reset</button>
       </div>
     </div>
@@ -330,19 +325,17 @@
     <!-- Intro Text -->
     <div id="tab4-intro" class="tab-intro">
       <p>
-        This tab lets you explore upgrade paths by selecting a product and target versions.
-        You can view supported upgrade combinations and any special notes or requirements.
+        Your product version upgrade path results appear here.
       </p>
     </div>
 
     <!-- Main Content (hidden by default) -->
     <div id="upgrade-main-content" style="display: none;">
-      <h1>Upgrade Path Results</h1>
+      <h1>Results</h1>
 
       <div class="additional-actions">
         <button id="addToFav" class="action-button">
-          <i class="fas fa-star"></i> Save to Favorites
-        </button>
+         
         <button id="export-csv-tab4" class="action-button" title="Export to CSV">
           <i class="fa-solid fa-file-arrow-down"></i> Export Results
         </button>
