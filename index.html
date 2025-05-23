@@ -31,10 +31,10 @@
 
   <!-- Tabs Container -->
   <div class="tabs-container">
-    <div class="tab" id="tab-interoperability" onclick="showPage('interoperability')">Delphix</div>
-    <div class="tab" id="tab-thirdPartySolutions" onclick="showPage('thirdPartySolutions')">Third Party</div>
-    <div class="tab" id="tab-hardware" onclick="showPage('hardware')">Hosting</div>
-    <div class="tab" id="tab-upgrade" onclick="showPage('upgrade')">Upgrades</div>
+    <div class="tab" id="tab-interoperability" onclick="showPage('interoperability')">Delphix products</div>
+    <div class="tab" id="tab-thirdPartySolutions" onclick="showPage('thirdPartySolutions')">Third-party solutions</div>
+    <div class="tab" id="tab-hardware" onclick="showPage('hardware')">Hardware & hosting</div>
+    <div class="tab" id="tab-upgrade" onclick="showPage('upgrade')">Product upgrades</div>
   </div>
 
   <!-- Horizontal separator before tabs -->
@@ -47,11 +47,11 @@
       
       <!-- Side Navigation for Interoperability -->
       <div id="sidenav">
-           <h3>Compare</h3>
+           <h3>Choose products to compare</h3>
         <div class="product-container">
           <label for="product1-category">Product:</label>
           <select id="product1-category">
-            <option value="">Choose a product</option>
+            <option value="" disabled selected>Select a product...</option>
             <!-- Options dynamically filled -->
           </select>
 
@@ -80,19 +80,19 @@
 
         <!-- Action buttons -->
         <div class="button-container">
-          <button class="primary-button" onclick="checkCompatibilityTab1()">Check compatibility</button>
-          <button class="secondary-button" onclick="resetFieldsTab1()">Reset</button>
+          <button class="primary-button" onclick="checkCompatibilityTab1()">Check Compatibility</button>
+          <button class="secondary-button" onclick="resetFieldsTab1()">Clear Selection</button>
         </div>
       </div>
 
       <!-- Intro text shown before results -->
       <div id="tab1-intro" class="tab-intro">
-        <p>Your Delphix product and version compatibility results appear here.</p>
+        <p>Select two products to compare. Compatibility results will appear here.</p>
       </div>
 
       <!-- Main Results Content (initially hidden) -->
       <div id="main-content" style="display: none;">
-        <h1>Results</h1>
+        <h1>Compatibility results</h1>
 
         <!-- Additional action buttons -->
         <div class="additional-actions">
@@ -164,7 +164,7 @@
           <!-- Product 2 Category -->
           <label for="thirdPartySolutions-product2-category">Category:</label>
           <select id="thirdPartySolutions-product2-category">
-            <option value="">Chosoe a category</option>
+            <option value="">Choose a category</option>
             <!-- Dynamically filled -->
           </select>
 
@@ -184,10 +184,10 @@
         </div>
 
         <!-- Action buttons -->
-        <div class="thirdPartySolutions-button-container">
-          <button class="thirdPartySolutions-primary-button" onclick="checkCompatibilityTab2()">Check compatibility</button>
-          <button class="thirdPartySolutions-secondary-button" onclick="resetFieldsTab2()">Reset</button>
-        </div>
+       <div class="button-group">
+  <button class="primary-button" onclick="checkCompatibilityTab1()">Check Compatibility</button>
+  <button class="secondary-button" onclick="resetFieldsTab1()">Clear Selection</button>
+</div>
       </div>
 
       <!-- Intro text for 3rd Party tab -->
